@@ -1,3 +1,8 @@
+import crypto from "crypto";
+import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
+import addCucumberPreprocessorPlugin from "@badeball/cypress-cucumber-preprocessor";
+global.crypto = crypto;
+
 const { defineConfig } = require("cypress");
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const addCucumberPreprocessorPlugin =
@@ -13,9 +18,12 @@ module.exports = defineConfig({
   },
   e2e: {
     specPattern: "cypress/e2e/features/**/*.feature",
-    //baseUrl: "https://opensource-demo.orangehrmlive.com",
+    video: false,          // disable videos in CI
     screenshotOnRunFailure: true,
-    
+    retries: {
+      runMode: 1,
+      openMode: 0
+    },
     setupNodeEvents(on, config) {
       addCucumberPreprocessorPlugin(on, config);
 
