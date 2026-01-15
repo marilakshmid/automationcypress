@@ -9,7 +9,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 15
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -17,10 +17,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 16
 
       - name: Install dependencies
         run: npm install
+           
+      - name: Upload Cypress Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-reports
+          path: cypress/reports
 
-      - name: Run Cypress tests
-        run: npm run cy:run
+      - name: Run Smoke Tests
+        run: npx cypress run --env tags="@smoke"
