@@ -1,6 +1,5 @@
 import crypto from "crypto";
-import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-import addCucumberPreprocessorPlugin from "@badeball/cypress-cucumber-preprocessor";
+
 global.crypto = crypto;
 
 const { defineConfig } = require("cypress");
