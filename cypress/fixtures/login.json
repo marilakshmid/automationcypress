@@ -1,0 +1,9 @@
+{
+  "orangehrm": {
+    "username": "Admin",
+    "password": "admin123" },
+  "cdkglobal": {
+     "cdkusername": "duraipam",
+     "cdkpassword": "test12345"
+  }
+}
