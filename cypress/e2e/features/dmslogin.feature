@@ -1,5 +1,6 @@
 Feature: CDK Global Login
 
+  @smoke
   Scenario: Login with valid credentials
     Given I am on the CDK Global login page
     When I enter valid email and password

@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "clean:reports": "rmdir /s /q cypress\\reports || exit 0",
-  "cy:open": "cypress open",
-  "cy:run": "cypress run",
-  "cy:run:headless": "cypress run --browser chrome",
-  "report:merge": "mochawesome-merge cypress/reports/*.json -o cypress/reports/merged-report.json",
-  "report:generate": "marge cypress/reports/merged-report.json -o cypress/reports",
-  "test:report": "npm run clean:reports && npm run cy:run && npm run report:merge && npm run report:generate"
-},
+    "clean:reports": "rmdir /s /q cypress\\reports || exit 0",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:headless": "cypress run --browser chrome",
+    "report:merge": "mochawesome-merge cypress/reports/*.json -o cypress/reports/merged-report.json",
+    "report:generate": "marge cypress/reports/merged-report.json -o cypress/reports",
+    "test:report": "npm run clean:reports && npm run cy:run && npm run report:merge && npm run report:generate"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
